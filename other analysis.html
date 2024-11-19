@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Analysis - Alcohol Impaired Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .tab-menu {
+            display: flex;
+            justify-content: center;
+            background-color: #ddd;
+            padding: 10px 0;
+        }
+        .tab-menu button {
+            background-color: #f1f1f1;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .tab-menu button:hover {
+            background-color: #ccc;
+        }
+        .tab-menu button.active {
+            background-color: #bbb;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            margin: 40px auto;
+            padding: 20px;
+            width: 100%;
+            max-width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+        .analysis {
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: gray;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        function openTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-menu button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            // Show the selected tab and activate the button
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <h1>Temporal Analysis - Alcohol Impaired Report</h1>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <a href="home.html">Temporal Analysis</a>
+            <a href="spatial analysis.html">Spatial Analysis</a>
+            <a href="other-analysis.html">Other Analysis</a>
+        </nav>
+    
+
+    <!-- Tab Menu -->
+    <div class="tab-menu">
+        <button class="active" data-tab="tab1" onclick="openTab('tab1')">Manner of Crashes</button>
+        <button data-tab="tab2" onclick="openTab('tab2')">Age and Gender</button>
+        <button data-tab="tab3" onclick="openTab('tab3')">Light & Weather Conditions</button>
+        <button data-tab="tab4" onclick="openTab('tab4')">Driver Actions</button>
+        <button data-tab="tab5" onclick="openTab('tab5')">Speed & Land Use</button>
+        <button data-tab="tab6" onclick="openTab('tab6')">Access Control</button> <!-- New Tab -->
+        <button data-tab="tab7" onclick="openTab('tab7')">Crashes by Percent of Grade</button>
+  
+</div>
+    </div>
+
+    <!-- Tab Content: Manner of Crashes -->
+    <div id="tab1" class="tab-content active">
+        <h2>Manner of Crashes</h2>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=0923601e96a1db6f988c" allowfullscreen></iframe>
+        <div class="analysis">
+            <p>
+                This visualization breaks down crashes by manner (e.g., angle, front-to-rear) and location (e.g., roadway, intersection). It provides critical insights into crash patterns for targeted safety measures.
+            </p>
+        </div>
+    </div>
+
+    <!-- Tab Content: Age and Gender -->
+    <div id="tab2" class="tab-content">
+        <h2>Age and Gender Analysis</h2>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=fc0ff3e4c6d394cbbd91" allowfullscreen></iframe>
+        <div class="analysis">
+            <p>
+                This chart examines crash data by age group and gender, highlighting demographics most affected by alcohol-impaired crashes.
+            </p>
+        </div>
+    </div>
+
+    <!-- Tab Content: Light & Weather Conditions -->
+    <div id="tab3" class="tab-content">
+        <h2>Light and Weather Conditions</h2>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=96d971e88a2cd95f63b7" allowfullscreen></iframe>
+        <div class="analysis">
+            <p>
+                This visualization explores the impact of lighting and weather conditions on crashes, including dark lighting and clear/rainy weather.
+            </p>
+        </div>
+    </div>
+
+    <!-- Tab Content: Driver Actions -->
+    <div id="tab4" class="tab-content">
+        <h2>Driver Actions</h2>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=56c495aa931e01b9c8b4" allowfullscreen></iframe>
+        <div class="analysis">
+            <p>
+                This section examines driver behavior and distractions that contribute to crashes, such as cellphone use and reckless driving.
+            </p>
+        </div>
+    </div>
+
+    <!-- Tab Content: Speed & Land Use -->
+    <div id="tab5" class="tab-content">
+        <h2>Speed Limit and Land Use</h2>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=6f14e9efc17866fb61f7" allowfullscreen></iframe>
+        <div class="analysis">
+            <p>
+                This visualization shows the relationship between speed limits, road surface conditions, and crashes, along with land use and lighting conditions.
+            </p>
+        </div>
+    </div>
+
+    
+
+<!-- Tab Content: Access Control -->
+<div id="tab6" class="tab-content">
+    <h2>Access Control and Terrain Analysis</h2>
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=24e6d83be9bcecceea6d" allowfullscreen></iframe>
+    <div class="analysis">
+        <p>
+            This visualization analyzes crash data based on access control levels (e.g., full, partial, or none) and terrain types (e.g., flat, rolling, or mountainous). The data helps identify high-risk areas based on infrastructure and environmental factors.
+        </p>
+    </div>
+</div>
+
+<div id="tab7" class="tab-content">
+    <h2>Total Number of Crashes by Percent of Grade</h2>
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=1c620085386ec2761d64" allowfullscreen></iframe>
+    <div class="analysis">
+        <p>
+            This chart displays the total number of crashes by the percent of road grade. PLUS and MINUS grades highlight uphill and downhill crash patterns, revealing that most crashes occur on low grades between 1% and 3%.
+        </p>
+    </div>
+
+    <h2>Total Number of Crashes by AADT and Direction of Curve</h2>
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTE0M2I3MTMtZjU3My00NWZiLTk4YzEtYWIwMmIxYjUwZTUxIiwidCI6ImFlMTQ1YWVhLWNkYjItNDQ2YS1iMDVhLTc4NThkZGU1ZGRiYSIsImMiOjN9&pageName=517e56777861c8ab9c0e" allowfullscreen></iframe>
+    <div class="analysis">
+        <p>
+            This scatter plot shows the relationship between Annual Average Daily Traffic (AADT) and the total number of crashes, categorized by the direction of the curve (Left or Right). Key observations:
+            <ul>
+                <li>Crashes tend to increase with higher AADT, but the distribution is more concentrated in the lower AADT range (below 50K).</li>
+                <li>Left-hand curves (in red) show a higher density of crashes compared to right-hand curves (in blue), especially at moderate traffic levels.</li>
+                <li>At higher AADT levels (above 150K), crashes are less frequent, indicating potential driver caution on busier roads or better infrastructure on high-traffic routes.</li>
+            </ul>
+        </p>
+    </div>
+</div>
+    <!-- Footer -->
+    <div class="footer">
+        © 2024 Alcohol-impaired Report. All rights reserved.
+    </div>
+</body>
+</html>
